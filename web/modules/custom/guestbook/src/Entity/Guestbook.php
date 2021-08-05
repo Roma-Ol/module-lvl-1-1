@@ -23,20 +23,20 @@ use Drupal\Core\Datetime\DrupalDateTime;
  *     "form" = {
  *       "add" = "Drupal\guestbook\Form\GuestForm",
  *       "edit" = "Drupal\guestbook\Form\GuestForm",
- *       "delete" = "Drupal\guestbook\Form\GuestForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *     },
- *     "permission_provider" = "Drupal\entity\EntityPermissionProvider",
+ *     "permission_provider" = "Drupal\Core\Entity\EntityPermissionProvider",
  *     "route_provider" = {
  *       "default" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
  *   },
  *   links = {
- *     "canonical" = "/guest/{guest}",
- *     "add-form" = "/guestbook",
- *     "edit-form" = "/guestbook/edit/{guest}",
- *     "delete-form" = "/guestbook/delete/{guest}",
+ *     "canonical" = "/guest/{Guestbook}",
+ *     "add-form" = "/guestbook/add",
+ *     "edit-form" = "/guestbook/edit/{Guestbook}",
+ *     "delete-form" = "/guestbook/delete/{Guestbook}",
  *   },
- *   admin_permission = "admintister Guestbook",
+ *   admin_permission = "administer nodes",
  * )
  */
 class Guestbook extends ContentEntityBase {
@@ -102,9 +102,9 @@ class Guestbook extends ContentEntityBase {
     $fields['profilePic'] = BaseFieldDefinition::create('image')
       ->setLabel(t('profilePic'))
       ->setSettings([
-        'max_filesize'    => '5242880',
-        'upload_location' => 'public://romaroma/',
-        'file_extensions' => 'png jpg jpeg',
+        'max_filesize'       => '5242880',
+        'upload_location'    => 'public://romaroma/',
+        'file_extensions'    => 'png jpg jpeg',
         'alt_field_required' => FALSE,
       ])
       ->setDisplayOptions('form', [
@@ -121,9 +121,9 @@ class Guestbook extends ContentEntityBase {
       ->setLabel(t('feedbackPic'))
       ->setRequired(TRUE)
       ->setSettings([
-        'max_filesize'    => '5242880',
-        'upload_location' => 'public://romaroma/',
-        'file_extensions' => 'png jpg jpeg',
+        'max_filesize'       => '5242880',
+        'upload_location'    => 'public://romaroma/',
+        'file_extensions'    => 'png jpg jpeg',
         'alt_field_required' => FALSE,
       ])
       ->setDisplayOptions('form', [
