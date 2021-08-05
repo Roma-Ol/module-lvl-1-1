@@ -43,13 +43,13 @@
                                 {% if user.hasPermission('administer nodes') %}
                                     <div class="interact-buttons">
                                         <div class="button-wrapper-div">
-                                            <a href='/romaroma/EditGuest/{{ i.id }}'
-                                               class="db-table-button db-table-button-edit use-ajax"
+                                            <a href='/guestbook/edit/{{ i.id }}'
+                                               class="db-table-button db-table-button-edit"
                                                data-dialog-type="modal">Edit this guest</a>
                                         </div>
                                         <div class="button-wrapper-div">
-                                            <a href='/romaroma/deleteGuest/{{ i.id }}'
-                                               class="db-table-button db-table-button-delete use-ajax"
+                                            <a href='/guestbook/delete/{{ i.id }}'
+                                               class="db-table-button db-table-button-delete"
                                                data-dialog-type="modal">Delete this guest</a>
                                         </div>
                                     </div>

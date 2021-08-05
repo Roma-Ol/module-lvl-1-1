@@ -21,9 +21,9 @@ use Drupal\Core\Datetime\DrupalDateTime;
  *   handlers = {
  *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
  *     "form" = {
- *       "add" = "Drupal\Core\Entity\ContentEntityForm",
- *       "edit" = "Drupal\guestbook\Form\EventForm",
- *       "delete" = "Drupal\guestbook\Form\EventForm",
+ *       "add" = "Drupal\guestbook\Form\GuestForm",
+ *       "edit" = "Drupal\guestbook\Form\GuestForm",
+ *       "delete" = "Drupal\guestbook\Form\GuestForm",
  *     },
  *     "permission_provider" = "Drupal\entity\EntityPermissionProvider",
  *     "route_provider" = {
@@ -36,7 +36,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
  *     "edit-form" = "/guestbook/edit/{guest}",
  *     "delete-form" = "/guestbook/delete/{guest}",
  *   },
- *   admin_permission = "admintister guestbook",
+ *   admin_permission = "admintister Guestbook",
  * )
  */
 class Guestbook extends ContentEntityBase {
@@ -50,6 +50,7 @@ class Guestbook extends ContentEntityBase {
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
+      ->addConstraint('NameCheck')
       ->setDisplayOptions('form', [
         'label'  => 'inline',
         'weight' => 0,
@@ -62,6 +63,7 @@ class Guestbook extends ContentEntityBase {
 
     $fields['email'] = BaseFieldDefinition::create('email')
       ->setLabel(t('Email'))
+      ->addConstraint('EmailCheck')
       ->setDisplayOptions('form', [
         'label'  => 'inline',
         'weight' => 10,
@@ -74,6 +76,7 @@ class Guestbook extends ContentEntityBase {
 
     $fields['tel'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Tel'))
+      ->addConstraint('TelCheck')
       ->setDisplayOptions('form', [
         'label'  => 'inline',
         'weight' => 20,
