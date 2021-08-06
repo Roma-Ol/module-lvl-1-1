@@ -28,6 +28,16 @@ class GuestForm extends ContentEntityForm {
       'event'    => 'change',
     ];
 
+    $form['email']['widget'][0]['value']['#ajax'] = [
+      'callback' => '::validateEmailAjax',
+      'event'    => 'change',
+    ];
+
+    $form['tel']['widget'][0]['value']['#ajax'] = [
+      'callback' => '::validateTelAjax',
+      'event'    => 'change',
+    ];
+
     return [
       $form,
     ];
@@ -64,6 +74,25 @@ class GuestForm extends ContentEntityForm {
   /**
    * Email AJAX validation.
    */
+  public function validateEmailAjax(array $form, FormStateInterface $form_state) {
+    $response   = new AjaxResponse();
+    $emailValue = $form_state->getValue('email');
+    if (!filter_var($emailValue[0]['value'], FILTER_VALIDATE_EMAIL)
+      || !preg_match('/^[A-Za-z1-9-_]+[@]+[a-z]+[.]+[a-z]+$/',
+        $emailValue[0]['value'])) {
+      $response->addCommand(new HtmlCommand(
+        '#form-system-messages-name',
+        '<p class="email-ajax-validation-alert-text">
+                   Email isn`t correct.
+                </p>'));
+    }
+    else {
+      $response->addCommand(new HtmlCommand(
+        '#form-system-messages-name',
+        ''));
+    }
+    return $response;
+  }
 
   public function save(array $form, FormStateInterface $form_state) {
     parent::save($form, $form_state);
