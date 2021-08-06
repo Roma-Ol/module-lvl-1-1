@@ -132,7 +132,7 @@ class GuestForm extends ContentEntityForm {
     $this->logger($entity->getEntityTypeId())
       ->notice('Form was submited', $arguments);
     $this->messenger()
-      ->addStatus($this->t('The file was saved - 2.', $arguments));
+      ->addStatus($this->t('This guest was saved.', $arguments));
 
     $form_state->setRedirectUrl(Url::fromRoute('romaroma.form'));
   }

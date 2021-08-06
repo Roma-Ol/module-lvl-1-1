@@ -1,7 +1,6 @@
 <div class="guestbook-page-wrapper">
     <div class="form-wrapper-first">
         <div class="form-wrapper-second">
-            <p class="table-header">Please, fill this form</p>
             {{ form }}
         </div>
     </div>
@@ -44,12 +43,12 @@
                                     <div class="interact-buttons">
                                         <div class="button-wrapper-div">
                                             <a href='/guestbook/edit/{{ i.id }}'
-                                               class="db-table-button db-table-button-edit"
+                                               class="db-table-button db-table-button-edit use-ajax"
                                                data-dialog-type="modal">Edit this guest</a>
                                         </div>
                                         <div class="button-wrapper-div">
                                             <a href='/guestbook/delete/{{ i.id }}'
-                                               class="db-table-button db-table-button-delete"
+                                               class="db-table-button db-table-button-delete use-ajax"
                                                data-dialog-type="modal">Delete this guest</a>
                                         </div>
                                     </div>

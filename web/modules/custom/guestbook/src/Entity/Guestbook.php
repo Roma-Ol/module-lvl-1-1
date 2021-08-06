@@ -5,7 +5,6 @@ namespace Drupal\guestbook\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implementing the specific functionality.
@@ -52,8 +51,11 @@ class Guestbook extends ContentEntityBase {
       ->setLabel(t('Name'))
       ->addConstraint('NameCheck')
       ->setDisplayOptions('form', [
-        'label'  => 'inline',
-        'weight' => 0,
+        'label'    => 'inline',
+        'weight'   => 0,
+        'settings' => [
+          'placeholder' => 'A-Z / min-2 / max-100',
+        ],
       ])
       ->setDisplayOptions('view', [
         'label'  => 'inline',
@@ -65,30 +67,42 @@ class Guestbook extends ContentEntityBase {
       ->setLabel(t('Email'))
       ->addConstraint('EmailCheck')
       ->setDisplayOptions('form', [
-        'label'  => 'inline',
-        'weight' => 10,
+        'label'    => 'inline',
+        'weight'   => 10,
+        'settings' => [
+          'placeholder' => 'Allowed values: Aa-Zz / _ / -',
+        ],
       ])
       ->setDisplayOptions('view', [
-        'label'  => 'inline',
-        'weight' => 10,
+        'label'    => 'inline',
+        'weight'   => 10,
+        'settings' => [
+          'placeholder' => 'Allowed values: Aa-Zz / _ / -',
+        ],
       ])
       ->setRequired(TRUE);
 
     $fields['tel'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Tel'))
+      ->setLabel(t('Phone number'))
       ->addConstraint('TelCheck')
       ->setDisplayOptions('form', [
-        'label'  => 'inline',
-        'weight' => 20,
+        'label'    => 'inline',
+        'weight'   => 20,
+        'settings' => [
+          'placeholder' => '+XX XXX XXX XX XX',
+        ],
       ])
       ->setDisplayOptions('view', [
-        'label'  => 'inline',
-        'weight' => 20,
+        'label'    => 'inline',
+        'weight'   => 20,
+        'settings' => [
+          'placeholder' => '+XX XXX XXX XX XX',
+        ],
       ])
       ->setRequired(TRUE);
 
     $fields['feedback'] = BaseFieldDefinition::create('string_long')
-      ->setLabel(t('Feedback'))
+      ->setLabel(t('Tell us what you think'))
       ->setDisplayOptions('form', [
         'label'  => 'inline',
         'weight' => 30,
@@ -100,12 +114,13 @@ class Guestbook extends ContentEntityBase {
       ->setRequired(TRUE);
 
     $fields['profilePic'] = BaseFieldDefinition::create('image')
-      ->setLabel(t('profilePic'))
+      ->setLabel(t('Profile Picture'))
+      ->setDescription(t('.'))
       ->setSettings([
-        'max_filesize'       => '5242880',
-        'upload_location'    => 'public://romaroma/',
-        'file_extensions'    => 'png jpg jpeg',
-        'alt_field_required' => FALSE,
+        'max_filesize'    => '5242880',
+        'upload_location' => 'public://romaroma/',
+        'file_extensions' => 'png jpg jpeg',
+        'alt_field'       => FALSE,
       ])
       ->setDisplayOptions('form', [
         'label'  => 'inline',
@@ -118,13 +133,13 @@ class Guestbook extends ContentEntityBase {
       ->setRequired(TRUE);
 
     $fields['feedbackPic'] = BaseFieldDefinition::create('image')
-      ->setLabel(t('feedbackPic'))
+      ->setLabel(t('Feedback Picture'))
       ->setRequired(TRUE)
       ->setSettings([
-        'max_filesize'       => '5242880',
-        'upload_location'    => 'public://romaroma/',
-        'file_extensions'    => 'png jpg jpeg',
-        'alt_field_required' => FALSE,
+        'max_filesize'    => '5242880',
+        'upload_location' => 'public://romaroma/',
+        'file_extensions' => 'png jpg jpeg',
+        'alt_field'       => FALSE,
       ])
       ->setDisplayOptions('form', [
         'label'  => 'inline',

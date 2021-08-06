@@ -7,8 +7,6 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-// @todo add hints
-
 /**
  * Class FirstPageController.
  *
@@ -89,7 +87,6 @@ class FirstPageController extends ControllerBase {
     $result = $this->load();
     foreach ($result as $row) {
       // Putting all the data we need into one variable.
-
       // Getting the profile picture.
       $profilePic         = file::load($row->profilePic__target_id);
       $profilePicUri      = $profilePic->getFileUri();
