@@ -7,6 +7,8 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+// @todo add hints
+
 /**
  * Class FirstPageController.
  *

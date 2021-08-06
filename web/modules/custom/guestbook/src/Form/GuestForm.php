@@ -94,6 +94,28 @@ class GuestForm extends ContentEntityForm {
     return $response;
   }
 
+  /**
+   * Tel. number validation.
+   */
+  public function validateTelAjax(array $form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+    $telValue = $form_state->getValue('email');
+    if (!preg_match('/[+0-9]{3} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}/',
+      $telValue[0]['value'])) {
+      $response->addCommand(new HtmlCommand(
+        '#form-system-messages-name',
+        '<p class="email-ajax-validation-alert-text">
+                   Phone number isn`t correct.
+                </p>'));
+    }
+    else {
+      $response->addCommand(new HtmlCommand(
+        '#form-system-messages-name',
+        ''));
+    }
+    return $response;
+  }
+
   public function save(array $form, FormStateInterface $form_state) {
     parent::save($form, $form_state);
 
