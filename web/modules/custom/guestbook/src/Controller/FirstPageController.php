@@ -23,6 +23,11 @@ class FirstPageController extends ControllerBase {
    */
   protected $formBuild;
 
+  /**
+   * Do some func.
+   *
+   * @var \Drupal\romaroma\Controller\FirstPageController
+   */
   protected $entityBuild;
 
   /**
