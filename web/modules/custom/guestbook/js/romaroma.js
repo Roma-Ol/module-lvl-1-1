@@ -3,27 +3,59 @@
 // Creating the variables well w3 w/
 let animatedDivForm = document.querySelector('.form-wrapper-first'),
     animatedDivTable = document.querySelector('.table-wrapper-first'),
-    deg = 0;
+    firstBlockForm = document.querySelector('.form-wrapper-second'),
+    firstBlockTable = document.querySelector('.table-wrapper-second'),
+    stop = false,
+    deg = 0,
+    formI = 0,
+    tableI = 0;
 
-// Animating the form border.
-function animateDivForm() {
-  animatedDivForm.style.background = `background linear-gradient(${deg++}deg, 
-  rgba(206,255,0,1) 10% , rgba(143,255,0,1) 30% , rgba(0,255,28,1) 50% ,
-  rgba(0,255,150,1) 70% , rgba(0,255,237,1) 90% )`;
-  requestAnimationFrame(animateDivForm);
-}
-requestAnimationFrame(animateDivForm);
+animatedDivForm.style.background = `background linear-gradient(0deg, #D4DCFF 50% , #7D83FF 90% )`;
 
-// Animating the table border.
-function animateDivTable() {
-  animatedDivTable.style.background = `background linear-gradient(${deg++}deg, 
-  rgba(206,255,0,1) 10% , rgba(143,255,0,1) 30% , rgba(0,255,28,1) 50% ,
-  rgba(0,255,150,1) 70% , rgba(0,255,237,1) 90% )`;
-  requestAnimationFrame(animateDivTable);
-}
-requestAnimationFrame(animateDivTable);
+firstBlockForm.addEventListener("click", (e) => {
+  if (stop === false && formI <= 1) {
 
-// Has no idea how 2 make a single func that can work with the arguments we need.
-// F.X. we can call this func and pass the element we want animate.
-// Therefore there`ll be no need to repeat the func twice.
-// HMU if u have a solution.
+    function animateDivForm() {
+      animatedDivForm.style.background = `background linear-gradient(${deg++}deg, 
+      #D4DCFF 50% , #7D83FF 90% )`;
+      requestAnimationFrame(animateDivForm);
+    }
+
+    stop = true;
+    formI++;
+    console.error(stop);
+    console.error('/2');
+    requestAnimationFrame(animateDivForm);
+  }
+  else {
+    animatedDivForm.style.background = `background linear-gradient(${deg}deg, #D4DCFF 50% , #7D83FF 90% )`;
+    stop = false;
+    console.error(stop);
+    console.error('!/2');
+  }
+});
+
+animatedDivTable.style.background = `background linear-gradient(0deg, #D4DCFF 50% , #7D83FF 90% )`;
+
+firstBlockTable.addEventListener("click", (e) => {
+  if (stop === false && tableI <= 1) {
+
+    function animateDivForm() {
+      animatedDivTable.style.background = `background linear-gradient(${deg++}deg, 
+      #D4DCFF 50% , #7D83FF 90% )`;
+      requestAnimationFrame(animateDivForm);
+    }
+
+    stop = true;
+    tableI++;
+    console.error(stop);
+    console.error('/2');
+    requestAnimationFrame(animateDivForm);
+  }
+  else {
+    animatedDivTable.style.background = `background linear-gradient(${deg}deg, #D4DCFF 50% , #7D83FF 90% )`;
+    stop = false;
+    console.error(stop);
+    console.error('!/2');
+  }
+});

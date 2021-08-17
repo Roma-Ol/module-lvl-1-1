@@ -117,7 +117,7 @@ class Guestbook extends ContentEntityBase {
 
     $fields['profilePic'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Profile Picture'))
-      ->setDescription(t('.'))
+      ->setDescription(t(''))
       ->setSettings([
         'max_filesize'    => '5242880',
         'upload_location' => 'public://romaroma/',
