@@ -12,14 +12,16 @@
                 <div class="db-table-content">
                     <div class="profile-author-info-block">
                         <div class="profile-pic">
-                            {# {% if i.profilePic.data %} #}
-                            {# <a data-fslightbox="gallery" href="{{ i.profilePic.url }}"> #}
-                            <a href="{{ i.profilePic.url }}">
+                            {% if i.profilePic.data %}
+                             <a data-fslightbox="gallery" href="{{ i.profilePic.url }}">
                                 <img src="{{ i.profilePic.url }}" alt="img">
-                            </a>
-                            {# {% else %} #}
-                            {# <img src="/modules/custom/romaroma/media/defaultImage.jpg" alt="xz"> #}
-                            {# {% endif %} #}
+                             </a>
+                             {% else %}
+                                 <div class="imafffwe">
+                                     DEFAULT
+                                     <img src="/modules/custom/guestbook/media/defaultImage.jpg" alt="xz">
+                                 </div>
+                             {% endif %}
                         </div>
                         <div class="profile-info">
                             <div class="profile-user-name profile-info-row">
@@ -49,7 +51,8 @@
                                         <div class="button-wrapper-div">
                                             <a href='/guestbook/delete/{{ i.id }}'
                                                class="db-table-button db-table-button-delete use-ajax"
-                                               data-dialog-type="modal">Delete this guest</a>
+                                               data-dialog-type="modal">Delete this guest
+                                            </a>
                                         </div>
                                     </div>
                                 {% endif %}
@@ -62,18 +65,11 @@
                                 {{ i.feedback }}
                             </div>
                             <div class="feedbackPic">
-                                {# {% if i.feedbackPic.data %} #}
-                                {# <a data-fslightbox="gallery" href="{{ i.feedbackPic.url }}"> #}
-                                {# <img src="{{ i.feedbackPic.url }}" alt="img"> #}
-                                {# </a> #}
-                                {# {% endif %} #}
-
-
-                                <a href="{{ i.feedbackPic.url }}">
-                                    <img src="{{ i.feedbackPic.url }}" alt="img">
-                                </a>
-
-
+                                 {% if i.feedbackPic.data %}
+                                 <a data-fslightbox="gallery" href="{{ i.feedbackPic.url }}">
+                                 <img src="{{ i.feedbackPic.url }}" alt="img">
+                                 </a>
+                                 {% endif %}
                             </div>
                             <div class="feedback-date-wrapper">
                                 <div class="feedback-date">

@@ -85,40 +85,53 @@ class FirstPageController extends ControllerBase {
     // Building the form.
     $form   = $this->build();
     $result = $this->load();
+    $result = json_decode(json_encode($result), TRUE);
     foreach ($result as $row) {
       // Putting all the data we need into one variable.
       // Getting the profile picture.
-      $profilePic         = file::load($row->profilePic__target_id);
-      $profilePicUri      = $profilePic->getFileUri();
-      $profilePicUrl      = file_url_transform_relative(Url::fromUri(file_create_url($profilePicUri))
-        ->toString());
-      $profilePicVariable = [
-        '#theme' => 'image',
-        '#uri'   => $profilePicUri,
-        '#alt'   => 'Profile picture',
-        '#title' => 'Profile picture',
-      ];
+      if ($row['profilePic__target_id'] !== NULL) {
+        $profilePic         = file::load($row['profilePic__target_id']);
+        $profilePicUri      = $profilePic->getFileUri();
+        $profilePicVariable = [
+          '#theme' => 'image',
+          '#uri'   => $profilePicUri,
+          '#alt'   => 'Profile picture',
+          '#title' => 'Profile picture',
+        ];
+        $profilePicUrl      = file_url_transform_relative(Url::fromUri(file_create_url($profilePicUri))
+          ->toString());
+      }
+      else {
+        $profilePicVariable = [];
+        $profilePicUrl      = '';
+      }
 
       // Getting the feedback picture.
-      $feedbackPic         = file::load($row->feedbackPic__target_id);
-      $feedbackPicUri      = $feedbackPic->getFileUri();
-      $feedbackPicUrl      = file_url_transform_relative(Url::fromUri(file_create_url($feedbackPicUri))
-        ->toString());
-      $feedbackPicVariable = [
-        '#theme' => 'image',
-        '#uri'   => $feedbackPicUri,
-        '#alt'   => 'Profile picture',
-        '#title' => 'Profile picture',
-      ];
+      if ($row['feedbackPic__target_id'] !== NULL) {
+        $feedbackPic         = file::load($row['feedbackPic__target_id']);
+        $feedbackPicUri      = $feedbackPic->getFileUri();
+        $feedbackPicVariable = [
+          '#theme' => 'image',
+          '#uri'   => $feedbackPicUri,
+          '#alt'   => 'Profile picture',
+          '#title' => 'Profile picture',
+        ];
+        $feedbackPicUrl      = file_url_transform_relative(Url::fromUri(file_create_url($feedbackPicUri))
+          ->toString());
+      }
+      else {
+        $feedbackPicVariable = [];
+        $feedbackPicUrl      = '';
+      }
 
       // Variable we'll work with in twig file.
       $data[] = [
-        'id'              => $row->id,
-        'name'            => $row->name,
-        'email'           => $row->email,
-        'tel'             => $row->tel,
-        'feedback__value' => $row->feedback,
-        'date'            => $row->date,
+        'id'              => $row['id'],
+        'name'            => $row['name'],
+        'email'           => $row['email'],
+        'tel'             => $row['tel'],
+        'feedback__value' => $row['feedback'],
+        'date'            => $row['date'],
         'profilePic'      => [
           'data' => $profilePicVariable,
           'url'  => $profilePicUrl,

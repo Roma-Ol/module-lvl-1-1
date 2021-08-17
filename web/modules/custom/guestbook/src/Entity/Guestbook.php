@@ -6,6 +6,9 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 
+#TODO add correct redirects on delete.
+#TODO publication date to normal format.
+
 /**
  * Implementing the specific functionality.
  *
@@ -37,7 +40,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   },
  *   admin_permission = "administer nodes",
  * )
- */
+ */;
 class Guestbook extends ContentEntityBase {
 
   /**
@@ -130,7 +133,7 @@ class Guestbook extends ContentEntityBase {
         'label'  => 'inline',
         'weight' => 40,
       ])
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['feedbackPic'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Feedback Picture'))
@@ -149,7 +152,7 @@ class Guestbook extends ContentEntityBase {
         'label'  => 'inline',
         'weight' => 50,
       ])
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['date'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Date'))
@@ -160,7 +163,7 @@ class Guestbook extends ContentEntityBase {
         ],
         'weight'   => 60,
       ])
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     return $fields;
   }
