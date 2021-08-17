@@ -125,13 +125,14 @@ class FirstPageController extends ControllerBase {
       }
 
       // Variable we'll work with in twig file.
+      $creationDate = date("m/d/Y H:i:s", $row['date']);
       $data[] = [
         'id'              => $row['id'],
         'name'            => $row['name'],
         'email'           => $row['email'],
         'tel'             => $row['tel'],
         'feedback__value' => $row['feedback'],
-        'date'            => $row['date'],
+        'date'            => $creationDate,
         'profilePic'      => [
           'data' => $profilePicVariable,
           'url'  => $profilePicUrl,

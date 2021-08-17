@@ -7,7 +7,6 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 
 #TODO add correct redirects on delete.
-#TODO publication date to normal format.
 
 /**
  * Implementing the specific functionality.
@@ -159,7 +158,8 @@ class Guestbook extends ContentEntityBase {
       ->setDisplayOptions('view', [
         'label'    => 'inline',
         'settings' => [
-          'format_type' => 'html_date',
+          'format_type' => 'date',
+//          'format' => 'm d y'
         ],
         'weight'   => 60,
       ])
