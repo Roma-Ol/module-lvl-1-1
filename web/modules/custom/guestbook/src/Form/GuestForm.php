@@ -8,10 +8,14 @@ use Drupal\Core\Url;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\AjaxResponse;
 
-$x = '';
-
+/**
+ * Adding AJAX stuff.
+ */
 class GuestForm extends ContentEntityForm {
 
+  /**
+   * Building the form and adding AJAX callbacks.
+   */
   public function buildForm(array $form, FormStateInterface $form_state) {
     /** @var  \Drupal\guestbook\Entity\Guestbook $entity */
     $form   = parent::buildForm($form, $form_state);
@@ -38,6 +42,17 @@ class GuestForm extends ContentEntityForm {
       'event'    => 'change',
     ];
 
+    $form['zal'] = [
+      '#type'   => 'markup',
+      '#prefix' => '<div class="buttons-wrapper-div">',
+      '#weight' => '30',
+    ];
+    $form['upa'] = [
+      '#type'   => 'markup',
+      '#suffix' => '</div>',
+      '#weight' => '50',
+    ];
+
     return [
       $form,
     ];
@@ -58,7 +73,7 @@ class GuestForm extends ContentEntityForm {
       strlen($nameValue[0]['value']) >= 100) {
       $response->addCommand(new HtmlCommand(
         '#form-system-messages-name',
-        '<p class="email-ajax-validation-alert-text">
+        '<p class="ajax-form-message email-ajax-validation-alert-text">
                    Name isn`t correct.
                 </p>'));
     }
@@ -82,7 +97,7 @@ class GuestForm extends ContentEntityForm {
         $emailValue[0]['value'])) {
       $response->addCommand(new HtmlCommand(
         '#form-system-messages-name',
-        '<p class="email-ajax-validation-alert-text">
+        '<p class="ajax-validation-alert-text email-ajax-validation-alert-text">
                    Email isn`t correct.
                 </p>'));
     }
@@ -104,7 +119,7 @@ class GuestForm extends ContentEntityForm {
       $telValue[0]['value'])) {
       $response->addCommand(new HtmlCommand(
         '#form-system-messages-name',
-        '<p class="email-ajax-validation-alert-text">
+        '<p class="ajax-form-message email-ajax-validation-alert-text">
                    Phone number isn`t correct.
                 </p>'));
     }
@@ -116,6 +131,9 @@ class GuestForm extends ContentEntityForm {
     return $response;
   }
 
+  /**
+   * Action after successful submit.
+   */
   public function save(array $form, FormStateInterface $form_state) {
     parent::save($form, $form_state);
 
