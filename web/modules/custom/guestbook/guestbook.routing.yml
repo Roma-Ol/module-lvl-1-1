@@ -1,5 +1,5 @@
 romaroma.form:
-  path: '/guestbook/addd'
+  path: '/guestbook'
   defaults:
     _controller: '\Drupal\guestbook\Controller\FirstPageController::report'
   requirements:
