@@ -20,6 +20,9 @@ body{
     @include firstBackground;
     .form-wrapper-second{
       @include secondBackground;
+      .form-header{
+        @include block-header;
+      }
       form{
         display: flex;
         flex-direction: column;
@@ -124,11 +127,7 @@ body{
     @include firstBackground;
     .table-wrapper-second{
       .table-header{
-        text-align: center;
-        color: #414591;
-        font-size: 35px;
-        border-radius: 15px;
-        padding: 15px 0 0 0;
+        @include block-header;
       }
       @include secondBackground;
       .db-table-content{

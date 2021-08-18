@@ -70,3 +70,11 @@
     opacity: 0.8;
   }
 }
+
+@mixin block-header{
+  text-align: center;
+  color: #414591;
+  font-size: 35px;
+  border-radius: 15px;
+  padding: 15px 0 0 0;
+}

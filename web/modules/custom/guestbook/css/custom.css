@@ -20,6 +20,13 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   background: #D4DCFF;
   padding: 15px;
 }
+.guestbook-page-wrapper .form-wrapper-first .form-wrapper-second .form-header {
+  text-align: center;
+  color: #414591;
+  font-size: 35px;
+  border-radius: 15px;
+  padding: 15px 0 0 0;
+}
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form {
   display: flex;
   flex-direction: column;

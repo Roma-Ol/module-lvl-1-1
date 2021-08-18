@@ -2,13 +2,14 @@
 <div class="guestbook-page-wrapper">
     <div class="form-wrapper-first">
         <div class="form-wrapper-second">
+            <p class="form-header block-headers"></p>
             {{ form }}
         </div>
     </div>
 
     <div class="table-wrapper-first">
         <div class="table-wrapper-second">
-            <p class="table-header">List of the guests</p>
+            <p class="table-header block-headers"></p>
             {% for i in content %}
                 <div class="db-table-content">
                     <div class="profile-author-info-block">
