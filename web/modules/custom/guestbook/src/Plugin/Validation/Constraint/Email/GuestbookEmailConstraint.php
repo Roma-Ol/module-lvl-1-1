@@ -20,4 +20,5 @@ class GuestbookEmailConstraint extends Constraint {
    * @var string
    */
   public $uncorrectEmail = 'Entered email "%value" is not correct.';
+
 }

@@ -1,7 +1,7 @@
 Please, follow the instruction above in order to open the project correctly.
 
 1.  $ cd *ur project directory*       		   		// Be sure to run all the commands from the project root
-2.  $ git pull origin tsk-5         		   		// Pull the latest branch from the GitHub.
+2.  $ git pull origin tsk-6         		   		// Pull the latest branch from the GitHub.
 3.  Copy settings.local.php to web/sites/default	// No explanation, just necessary
 4.  Copy settings.php to web/sites/default       	// No explanation, just necessary
 5.  $ fin up         				  				// Start project services

@@ -9,8 +9,6 @@ function setDefaultBG(element) {
   element.style.background = `background linear-gradient(0deg,
   #D4DCFF 50%, #7D83FF 90% )`;
 }
-setDefaultBG(animatedDivForm);
-setDefaultBG(animatedDivTable);
 
 const firstBlockForm = document.querySelector('.form-wrapper-second'),
       firstBlockTable = document.querySelector('.table-wrapper-second');
@@ -31,8 +29,6 @@ function clicking(element, counter, animatedElement, deg) {
     }
   });
 }
-clicking(firstBlockForm, formI, animatedDivForm);
-clicking(firstBlockTable, tableI, animatedDivTable);
 
 // Headers animation.
 const formText = 'General guest form',
@@ -47,10 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function typeText() {
     if (textI < formText.length) {
       formHeader.innerHTML += formText.charAt(textI);
-      tableHeader.innerHTML += tableText.charAt(textI);
+      if(animatedDivTable !== null) {
+        tableHeader.innerHTML += tableText.charAt(textI);
+      }
       textI++;
       setTimeout(typeText, speed);
     }
   }
   typeText();
 });
+
+// Calling the funcs.
+setDefaultBG(animatedDivForm);
+clicking(firstBlockForm, formI, animatedDivForm);
+
+if (animatedDivTable !== null) {
+  setDefaultBG(animatedDivTable);
+  clicking(firstBlockTable, tableI, animatedDivTable);
+}

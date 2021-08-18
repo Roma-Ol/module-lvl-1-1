@@ -3,10 +3,13 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page {
   background-color: #D4DCFF;
 }
 body .dialog-off-canvas-main-canvas #page-wrapper #page #header {
-  background: #7d83ff;
+  background: #7D83FF;
 }
 body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   background-color: #D4DCFF;
+}
+body .dialog-off-canvas-main-canvas #page-wrapper #page footer {
+  background: #7D83FF;
 }
 
 .guestbook-page-wrapper {
@@ -34,7 +37,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #form-system-messages-name p {
   background: linear-gradient(129deg, #ee7674 68%, #f4dcdb 69%, #f4dcdb 69%, #f4dcdb 70%, #ee7674 71%);
-  color: white;
+  color: #fff;
   background-size: 500% 500%;
   animation: gradient 15s ease infinite;
   padding: 15px;
@@ -186,7 +189,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input {
   background: transparent;
-  color: white;
+  color: #fff;
   border-radius: inherit;
   border: inherit;
   height: 100%;
@@ -198,8 +201,8 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   margin: 0 auto;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input:hover {
-  background: rgba(0, 0, 0, 0.18);
-  color: #ffffff;
+  background: #00000033;
+  color: #414591;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input:active {
   background: #3e43a8;
@@ -279,14 +282,14 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   border-radius: inherit;
   width: 100%;
   display: block;
-  color: white;
+  color: #fff;
   border-bottom: none;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button:active {
-  background: #3e43a8;
+  background: #414591;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button:hover {
-  background: rgba(0, 0, 0, 0.18);
+  background: #00000033;
   margin-left: -10px;
   text-decoration: none;
   border-bottom: none;

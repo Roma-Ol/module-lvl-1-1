@@ -6,8 +6,6 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 
-#TODO add correct redirects on delete.
-
 /**
  * Implementing the specific functionality.
  *
@@ -117,7 +115,6 @@ class Guestbook extends ContentEntityBase {
 
     $fields['profilePic'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Profile Picture'))
-      ->setDescription(t(''))
       ->setSettings([
         'max_filesize'    => '5242880',
         'upload_location' => 'public://romaroma/',
@@ -159,7 +156,6 @@ class Guestbook extends ContentEntityBase {
         'label'    => 'inline',
         'settings' => [
           'format_type' => 'date',
-//          'format' => 'm d y'
         ],
         'weight'   => 60,
       ])
