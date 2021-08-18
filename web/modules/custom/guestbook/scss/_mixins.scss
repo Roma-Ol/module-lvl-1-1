@@ -4,7 +4,7 @@
   border: none;
   background: #f1f4ff;
   padding: 10px;
-  box-sizing: content-box;
+  border-bottom: 1.5px solid transparent;
   &:hover, &:focus {
     background: #D4DCFF;
     animation: gradient 15s ease infinite;
@@ -31,8 +31,7 @@
 }
 
 @mixin bgGreenAnimatedButtonWrapper {
-  background: linear-gradient(90deg, rgb(229, 211, 114) 10%, rgb(163, 208, 104) 30%, rgb(88, 154, 184) 50%,
-          rgb(162, 67, 182) 70%, rgb(205, 35, 114) 90%);
+  background: linear-gradient(129deg, #7D83FF 68%, #D4DCFF 69%, #D4DCFF 69%, #D4DCFF 70%, #7D83FF 71%);
   background-size: 500% 500%;
   animation: gradient 15s ease infinite;
 }
@@ -44,7 +43,7 @@
 }
 
 @mixin firstBackground {
-  padding: 3px;
+  padding: 2px;
 }
 
 @mixin secondBackground {
@@ -55,4 +54,19 @@
 
 @mixin clearPadding{
   padding: 0;
+}
+
+@mixin imgHover{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+@mixin imgHover-hover{
+  &:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
 }

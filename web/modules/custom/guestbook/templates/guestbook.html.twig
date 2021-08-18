@@ -18,9 +18,9 @@
                                 <img src="{{ i.profilePic.url }}" alt="img">
                              </a>
                              {% else %}
-                                 <div class="imafffwe">
-                                     <img src="/modules/custom/guestbook/media/defaultImage.jpg" alt="xz">
-                                 </div>
+                             <a data-fslightbox="gallery" href="modules/custom/guestbook/media/defaultImage.jpg">
+                                 <img src="/modules/custom/guestbook/media/defaultImage.jpg" alt="xz">
+                             </a>
                              {% endif %}
                         </div>
                         <div class="profile-info">
@@ -62,7 +62,7 @@
                     <div class="profile-feedback-block">
                         <div class="feedback-content">
                             <div class="feedback-text">
-                                {{ i.feedback }}
+                                {{ i.feedback__value }}
                             </div>
                             <div class="feedbackPic">
                                  {% if i.feedbackPic.data %}

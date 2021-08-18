@@ -96,7 +96,8 @@ body{
           color: #414591;
           @include bgGreenAnimatedButtonWrapper;
           input{
-            @include bgGreenAnimatedButton;
+            background: transparent;
+            color: $clr-white;
             border-radius: inherit;
             border: inherit;
             height: 100%;
@@ -105,12 +106,13 @@ body{
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 5px;
-            color: $clr-black;
             margin: 0 auto;
-            transition-duration: 2s;
             &:hover{
-              background: rgba(0, 0, 0, 0.45);
-              color: $clr-white;
+              background: rgba(0, 0, 0, 0.18);
+              color: #ffffff;
+            }
+            &:active{
+              background: #3e43a8;
             }
           }
         }
@@ -123,8 +125,8 @@ body{
     .table-wrapper-second{
       .table-header{
         text-align: center;
+        color: #414591;
         font-size: 35px;
-        @include bgGreenAnimated;
         border-radius: 15px;
         padding: 15px 0 0 0;
       }
@@ -133,24 +135,33 @@ body{
         display: flex;
         gap: 15px;
         .profile-author-info-block{
-          img{
-            margin: 0 auto 15px auto;
-            border-radius: 15px;
-            max-width: 250px;
+          .profile-pic{
+            overflow: hidden;
+            background: #7D83FF;
+            a{
+              border: none;
+              margin-bottom: 0;
+              img{
+                margin: 0 auto;
+                max-width: 250px;
+                @include imgHover;
+              }
+              @include imgHover-hover;
+            }
           }
           .profile-info{
             .profile-info-row{
               font-size: 15px;
-              @include bgGreenAnimated;
               padding: 5px;
               border-radius: 5px;
               margin-bottom: 10px;
               a{
                 transition: 0.5s;
-                color: $clr-cyan-dark;
+                color: #414591;
+                border-bottom: none;
                 &:hover{
                   text-decoration: none;
-                  color: $clr-cyan;
+                  color: #7D83FF;
                 }
               }
             }
@@ -159,21 +170,30 @@ body{
               .button-wrapper-div{
                 @include bgGreenAnimatedButtonWrapper;
                 margin-bottom: 10px;
-                border-radius: 5px;
+                border-bottom: none;
                 text-align: center;
                 width: 100%;
-                //transition: 3s;
+                overflow: hidden;
                 .db-table-button{
-                  @include bgGreenAnimatedButton;
                   line-height: normal;
                   transition: 1s;
                   border-radius: inherit;
                   width: 100%;
                   display: block;
-                  color: $clr-cyan-dark;
+                  color: $clr-white;
+                  border-bottom: none;
+                  &:active{
+                    background: #3e43a8;
+                  }
                   &:hover{
+                    background: rgba(0, 0, 0, 0.18);
                     margin-left: -10px;
                     text-decoration: none;
+                    border-bottom: none;
+                  }
+                  &:hover:after{
+                    content: '  >>>';
+                    position: absolute;
                   }
                 }
               }
@@ -188,12 +208,16 @@ body{
             text-align: justify;
           }
           .feedbackPic{
-            img{
-              width: 100%;
-              height: 300px;
-              object-fit: cover;
-              border-radius: 15px;
-              margin-bottom: 15px;
+            background: #7D83FF;
+            overflow: hidden;
+            a{
+              img{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                @include imgHover;
+              }
+              @include imgHover-hover;
             }
           }
           .feedback-date-wrapper{
@@ -209,7 +233,7 @@ body{
               border-radius: inherit;
               border-bottom-left-radius: unset;
               border-top-right-radius: unset;
-              background: white;
+              background: #D4DCFF;
             }
           }
         }
@@ -221,14 +245,36 @@ body{
 
 @media (max-width: 600px) {
   .guestbook-page-wrapper{
+    .form-wrapper-first{
+      .form-wrapper-second{
+        form{
+          .buttons-wrapper-div{
+            display: block;
+          }
+        }
+      }
+    }
     .table-wrapper-first{
       .table-wrapper-second{
         .db-table-content{
           display: block;
           .profile-author-info-block {
             .profile-pic{
-              display: flex;
-              justify-content: center;
+              width: max-content;
+              margin: 0 auto;
+            }
+            .profile-info-row{
+              text-align: center;
+              &:first-child{
+                margin-top: 20px;
+              }
+            }
+          }
+          .profile-feedback-block{
+            .feedback-content{
+              .feedback-date-wrapper{
+                margin-top: 15px;
+              }
             }
           }
         }

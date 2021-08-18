@@ -13,7 +13,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   font-family: "Baloo Tammudu 2", cursive;
 }
 .guestbook-page-wrapper .form-wrapper-first {
-  padding: 3px;
+  padding: 2px;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second {
   border-radius: inherit;
@@ -66,7 +66,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   border: none;
   background: #f1f4ff;
   padding: 10px;
-  box-sizing: content-box;
+  border-bottom: 1.5px solid transparent;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #edit-name-wrapper .form-item input:hover, .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #edit-name-wrapper .form-item input:focus,
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #edit-email-wrapper .form-item input:hover,
@@ -111,7 +111,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   border: none;
   background: #f1f4ff;
   padding: 10px;
-  box-sizing: content-box;
+  border-bottom: 1.5px solid transparent;
   resize: none;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #edit-name-wrapper .form-item .form-textarea-wrapper textarea:hover, .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form #edit-name-wrapper .form-item .form-textarea-wrapper textarea:focus,
@@ -155,7 +155,7 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   border: none;
   background: #f1f4ff;
   padding: 10px;
-  box-sizing: content-box;
+  border-bottom: 1.5px solid transparent;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .buttons-wrapper-div .form-group .form-item .form-managed-file input:hover, .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .buttons-wrapper-div .form-group .form-item .form-managed-file input:focus {
   background: #D4DCFF;
@@ -173,14 +173,13 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   text-transform: uppercase;
   font-size: 20px;
   color: #414591;
-  background: linear-gradient(90deg, #e5d372 10%, #a3d068 30%, #589ab8 50%, #a243b6 70%, #cd2372 90%);
+  background: linear-gradient(129deg, #7D83FF 68%, #D4DCFF 69%, #D4DCFF 69%, #D4DCFF 70%, #7D83FF 71%);
   background-size: 500% 500%;
   animation: gradient 15s ease infinite;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input {
-  background: linear-gradient(90deg, #faffe1 10%, #f1ffe2 30%, #95ffcd 50%, #dcfff0 70%, #eee2fc 90%);
-  background-size: 500% 500%;
-  animation: gradient 15s ease infinite;
+  background: transparent;
+  color: white;
   border-radius: inherit;
   border: inherit;
   height: 100%;
@@ -189,17 +188,18 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 5px;
-  color: #000;
   margin: 0 auto;
-  transition-duration: 2s;
 }
 .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input:hover {
-  background: rgba(0, 0, 0, 0.45);
-  color: white;
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+}
+.guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .form-actions input:active {
+  background: #3e43a8;
 }
 .guestbook-page-wrapper .table-wrapper-first {
   margin: 15px 0;
-  padding: 3px;
+  padding: 2px;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second {
   border-radius: inherit;
@@ -208,10 +208,8 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .table-header {
   text-align: center;
+  color: #414591;
   font-size: 35px;
-  background: linear-gradient(90deg, rgba(206, 255, 0, 0.1) 10%, rgba(143, 255, 0, 0.1) 30%, rgba(0, 255, 28, 0.1) 50%, rgba(0, 255, 150, 0.1) 70%, rgba(0, 255, 237, 0.1) 90%);
-  background-size: 500% 500%;
-  animation: gradient 15s ease infinite;
   border-radius: 15px;
   padding: 15px 0 0 0;
 }
@@ -219,54 +217,76 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   display: flex;
   gap: 15px;
 }
-.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block img {
-  margin: 0 auto 15px auto;
-  border-radius: 15px;
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-pic {
+  overflow: hidden;
+  background: #7D83FF;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-pic a {
+  border: none;
+  margin-bottom: 0;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-pic a img {
+  margin: 0 auto;
   max-width: 250px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-pic a:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .profile-info-row {
   font-size: 15px;
-  background: linear-gradient(90deg, rgba(206, 255, 0, 0.1) 10%, rgba(143, 255, 0, 0.1) 30%, rgba(0, 255, 28, 0.1) 50%, rgba(0, 255, 150, 0.1) 70%, rgba(0, 255, 237, 0.1) 90%);
-  background-size: 500% 500%;
-  animation: gradient 15s ease infinite;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .profile-info-row a {
   transition: 0.5s;
-  color: #065531;
+  color: #414591;
+  border-bottom: none;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .profile-info-row a:hover {
   text-decoration: none;
-  color: #47ee9f;
+  color: #7D83FF;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons {
   margin-top: 30px;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div {
-  background: linear-gradient(90deg, #e5d372 10%, #a3d068 30%, #589ab8 50%, #a243b6 70%, #cd2372 90%);
+  background: linear-gradient(129deg, #7D83FF 68%, #D4DCFF 69%, #D4DCFF 69%, #D4DCFF 70%, #7D83FF 71%);
   background-size: 500% 500%;
   animation: gradient 15s ease infinite;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-bottom: none;
   text-align: center;
   width: 100%;
+  overflow: hidden;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button {
-  background: linear-gradient(90deg, #faffe1 10%, #f1ffe2 30%, #95ffcd 50%, #dcfff0 70%, #eee2fc 90%);
-  background-size: 500% 500%;
-  animation: gradient 15s ease infinite;
   line-height: normal;
   transition: 1s;
   border-radius: inherit;
   width: 100%;
   display: block;
-  color: #065531;
+  color: white;
+  border-bottom: none;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button:active {
+  background: #3e43a8;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button:hover {
+  background: rgba(0, 0, 0, 0.18);
   margin-left: -10px;
   text-decoration: none;
+  border-bottom: none;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info .interact-buttons .button-wrapper-div .db-table-button:hover:after {
+  content: "  >>>";
+  position: absolute;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block {
   width: 100%;
@@ -276,15 +296,26 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   line-height: 1.8;
   text-align: justify;
 }
-.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedbackPic img {
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedbackPic {
+  background: #7D83FF;
+  overflow: hidden;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedbackPic a img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedbackPic a:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedback-date-wrapper {
-  background: linear-gradient(90deg, #e5d372 10%, #a3d068 30%, #589ab8 50%, #a243b6 70%, #cd2372 90%);
+  background: linear-gradient(129deg, #7D83FF 68%, #D4DCFF 69%, #D4DCFF 69%, #D4DCFF 70%, #7D83FF 71%);
   background-size: 500% 500%;
   animation: gradient 15s ease infinite;
   padding: 1px;
@@ -299,16 +330,28 @@ body .dialog-off-canvas-main-canvas #page-wrapper #page #main-wrapper {
   border-radius: inherit;
   border-bottom-left-radius: unset;
   border-top-right-radius: unset;
-  background: white;
+  background: #D4DCFF;
 }
 
 @media (max-width: 600px) {
+  .guestbook-page-wrapper .form-wrapper-first .form-wrapper-second form .buttons-wrapper-div {
+    display: block;
+  }
   .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content {
     display: block;
   }
   .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-pic {
-    display: flex;
-    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info-row {
+    text-align: center;
+  }
+  .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-author-info-block .profile-info-row:first-child {
+    margin-top: 20px;
+  }
+  .guestbook-page-wrapper .table-wrapper-first .table-wrapper-second .db-table-content .profile-feedback-block .feedback-content .feedback-date-wrapper {
+    margin-top: 15px;
   }
 }
 .ui-dialog-titlebar {
