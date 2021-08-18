@@ -11,6 +11,12 @@ Please, follow the instruction above in order to open the project correctly.
 9.  Follow http://*ur project name*/guestbook  		// To see the perfection)))0)))
 10. Enjoy           			   	  				// The most important part.
 
+--------------------------OR--------------------------
+
+U can just copy the module folder (web/modules/custom/guestbook) into ur project modules folder.
+
+-------------------------ALSO-------------------------
+
 Currently, because of the AJAX, u`ll need to change ur cursor position twice (it`ll return back to its
 postion after the first click). The problem itself lays in Entity API AJAX functionality and we all
 hope that it`ll be fixed asap.
